@@ -7,17 +7,20 @@ import time
 # Delay to switch to MEXC tab after starting script
 print("⏳ Switch to the MEXC UI within 5 seconds...")
 time.sleep(3)
+start_at = time.time() * 1000
 
 pyautogui.click(x=1680, y=296)  # 👈 Replace with sell button position
 # Step 1: Click 'Amount' input field (manually update coords)
-pyautogui.click(x=1785, y=496)  # 👈 Replace with real position
-pyautogui.hotkey('ctrl', 'a')  # Select existing value
-pyautogui.press('backspace')   # Clear field
+pyautogui.doubleClick(x=1785, y=496)
+ # 👈 Replace with real position
 pyautogui.typewrite('0.01')     # Type amount
 
 # Step 3: Click 'Sell SOL' button
 pyautogui.click(x=1744, y=578)  # 👈 Replace with sell button position
 
+end_at = time.time() * 1000
+diff = end_at - start_at
+print('speed',diff)
 # Optional: Confirm sell (if confirmation popup appears)
 time.sleep(1)
 # pyautogui.press('enter')       # Confirms the dialog (if any)
