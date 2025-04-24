@@ -1,0 +1,4 @@
+Buy: x=1680, y=296
+Sell: x=1816, y=297
+Input: x=1785, y=496
+Confirm: x=1744, y=578
